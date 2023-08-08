@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #notification {
+    display: none;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    padding: 10px;
+    background-color: lightgray;
+    border: 1px solid gray;
+  }
+    </style>
+</head>
+<body>
+    <input type="text" id="text-field">
+
+<div id="notification">Цей div з'являється під час фокусування на текстовому полі</div>
+
+<script>
+  const textField = document.getElementById("text-field");
+  const notificationDiv = document.getElementById("notification");
+
+  textField.addEventListener("focus", () => {
+    notificationDiv.style.display = "block";
+  });
+
+  textField.addEventListener("blur", () => {
+    notificationDiv.style.display = "none";
+  });
+</script>
+</body>
+</html>
